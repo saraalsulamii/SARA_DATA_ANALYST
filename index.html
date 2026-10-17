@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analyst Portfolio | SQL Server & BI Specialist</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              dark: '#0B1120',
+              card: '#1E293B',
+              border: '#334155',
+              cyan: '#06B6D4',
+              teal: '#14B8A6',
+              accent: '#38BDF8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0B1120;
+      color: #F8FAFC;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38BDF8 0%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0F172A;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #06B6D4;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased leading-relaxed custom-scrollbar selection:bg-brand-cyan selection:text-slate-900">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-brand-dark/80 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="text-xl font-bold font-mono tracking-tight hover:opacity-80 transition">
+        <span class="text-brand-cyan">&lt;</span>DataAnalyst<span class="text-brand-teal">/&gt;</span>
+      </a>
+
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-brand-cyan transition">About</a>
+        <a href="#projects" class="hover:text-brand-cyan transition">SQL Projects</a>
+        <a href="#skills" class="hover:text-brand-cyan transition">Skills</a>
+        <a href="#sandbox" class="hover:text-brand-cyan transition">Interactive Sandbox</a>
+        <a href="#contact" class="hover:text-brand-cyan transition">Contact</a>
+      </nav>
+
+      <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-slate-900 bg-brand-cyan hover:bg-brand-teal rounded-lg transition duration-200">
+        Get In Touch
+      </a>
+    </div>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-20 md:py-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-8 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold uppercase tracking-wider">
+            <i class="fa-solid fa-location-dot"></i> Jeddah, Saudi Arabia
+          </div>
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+            Data Analyst & <br>
+            <span class="gradient-text">Business Intelligence Specialist</span>
+          </h1>
+          <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
+            Transforming raw database architecture into clear business intelligence. Specialized in 
+            <strong class="text-brand-cyan">SQL Server (SSMS)</strong>, <strong class="text-brand-teal">Power BI</strong>, 
+            Advanced Excel, Data Modeling, and Business Analytics. Focused on extracting actionable growth insights.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="#projects" class="px-6 py-3 rounded-lg bg-brand-cyan hover:bg-brand-teal text-slate-900 font-semibold transition flex items-center gap-2">
+              <i class="fa-solid fa-database"></i> View SQL Projects
+            </a>
+            <a href="https://github.com" target="_blank" class="px-6 py-3 rounded-lg bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 font-semibold transition flex items-center gap-2">
+              <i class="fa-brands fa-github text-xl"></i> GitHub Profile
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="px-6 py-3 rounded-lg bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 font-semibold transition flex items-center gap-2">
+              <i class="fa-brands fa-linkedin text-xl text-sky-400"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 flex justify-center">
+          <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl bg-gradient-to-tr from-brand-cyan to-brand-teal p-1 shadow-2xl">
+            <div class="w-full h-full bg-brand-dark rounded-2xl p-6 flex flex-col justify-between font-mono text-xs">
+              <div class="flex items-center justify-between text-slate-500 border-b border-brand-border pb-3">
+                <span class="flex gap-1.5">
+                  <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                </span>
+                <span>SSMS Query</span>
+              </div>
+              <div class="space-y-2 text-slate-300">
+                <p><span class="text-sky-400">SELECT</span> Developer, Status</p>
+                <p><span class="text-sky-400">FROM</span> Analysts_DB</p>
+                <p><span class="text-sky-400">WHERE</span> Location = <span class="text-emerald-400">'Jeddah'</span></p>
+                <p><span class="text-sky-400">  AND</span> Skills <span class="text-sky-400">LIKE</span> <span class="text-emerald-400">'%SQL%'</span>;</p>
+              </div>
+              <div class="pt-3 border-t border-brand-border text-emerald-400 font-sans font-medium text-sm flex items-center gap-2">
+                <i class="fa-solid fa-check-circle"></i> 1 Row Affected (0.02 sec)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-16 bg-slate-900/50 border-y border-brand-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight">Featured SQL Projects</h2>
+            <p class="text-slate-400 mt-2">Hands-on SQL Server database transformations & enterprise reporting analytics.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Project Card 1 -->
+          <div class="bg-brand-card border border-brand-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-cyan/50 transition">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="text-xs font-mono bg-brand-cyan/10 text-brand-cyan px-2.5 py-1 rounded border border-brand-cyan/20">SQL Server (SSMS)</span>
+                <span class="text-slate-400 text-xs font-mono"><i class="fa-regular fa-folder-open"></i> Portfolio Repo</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-100 mb-2">Nashville Housing Data Cleaning & Transformation</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                Raw real estate transaction data cleaning using SQL Server. Handled missing addresses via Self JOINs, parsed unorganized location strings, standardized dates, and purged duplicate records using CTEs and ROW_NUMBER window functions.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Window Functions</span>
+                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">CTEs</span>
+                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">String Parsing</span>
+                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Self JOINs</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 border-t border-brand-border">
+              <button onclick="openModal('modal-p1')" class="text-sm text-brand-cyan hover:text-brand-teal font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-code"></i> View SQL Script
+              </button>
+              <a href="https://github.com" target="_blank" class="text-sm text-slate-400 hover:text-slate-200 flex items-center gap-1 ml-auto">
+                GitHub Repo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="bg-brand-card border border-brand-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-cyan/50 transition">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="text-xs font-mono bg-brand-teal/10 text-brand-teal px-2.5 py-1 rounded border border-brand-teal/20">Business Intelligence</span>
+                <span class="text-slate-400 text-xs font-mono"><i class="fa-regular fa-folder-open"></i> Portfolio Repo</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-100 mb-2">Retail Sales & Customer RFM Segmentation Analysis</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                Built business analytics queries to evaluate transactional revenue patterns. Calculated Month-over-Month (MoM) revenue growth metrics using LAG(), ranked store performances across regions, and segmented customers using RFM logic.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">MoM Metrics</span>
+                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">RFM Analysis</span>
+                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">CASE WHEN</span>
+                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Aggregations</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 border-t border-brand-border">
+              <button onclick="openModal('modal-p2')" class="text-sm text-brand-cyan hover:text-brand-teal font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-code"></i> View SQL Script
+              </button>
+              <a href="https://github.com" target="_blank" class="text-sm text-slate-400 hover:text-slate-200 flex items-center gap-1 ml-auto">
+                GitHub Repo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Skills Section -->
+    <section id="skills" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold tracking-tight">Core Competencies & Stack</h2>
+        <p class="text-slate-400 mt-2">Technical proficiencies and business domain experience.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Technical Skills -->
+        <div class="bg-brand-card border border-brand-border rounded-xl p-6">
+          <h3 class="text-lg font-bold text-brand-cyan mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-laptop-code"></i> Technical Stack
+          </h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-medium text-slate-200">SQL Server (SSMS, T-SQL)</span>
+                <span class="text-brand-cyan font-mono">Advanced</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-brand-cyan h-2 rounded-full w-[90%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-medium text-slate-200">Power BI & DAX</span>
+                <span class="text-brand-teal font-mono">Proficient</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-brand-teal h-2 rounded-full w-[82%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-medium text-slate-200">Advanced Excel (Power Query, Pivot Tables)</span>
+                <span class="text-brand-cyan font-mono">Advanced</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-brand-cyan h-2 rounded-full w-[88%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-medium text-slate-200">Data Modeling & Normalization</span>
+                <span class="text-brand-teal font-mono">Proficient</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-brand-teal h-2 rounded-full w-[80%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-medium text-slate-200">Python (Pandas, NumPy)</span>
+                <span class="text-slate-400 font-mono">Intermediate</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-slate-600 h-2 rounded-full w-[65%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Domain Knowledge -->
+        <div class="bg-brand-card border border-brand-border rounded-xl p-6">
+          <h3 class="text-lg font-bold text-brand-teal mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-chart-line"></i> Domain Expertise
+          </h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg bg-slate-900/60 border border-brand-border">
+              <i class="fa-solid fa-broom text-brand-cyan text-xl mb-2"></i>
+              <h4 class="font-semibold text-sm text-slate-200">ETL & Data Cleansing</h4>
+              <p class="text-xs text-slate-400 mt-1">Transforming dirty raw files into operational data formats.</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-slate-900/60 border border-brand-border">
+              <i class="fa-solid fa-gauge-high text-brand-teal text-xl mb-2"></i>
+              <h4 class="font-semibold text-sm text-slate-200">KPI Reporting</h4>
+              <p class="text-xs text-slate-400 mt-1">Building automated executive dashboards & operational scorecards.</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-slate-900/60 border border-brand-border">
+              <i class="fa-solid fa-sitemap text-brand-cyan text-xl mb-2"></i>
+              <h4 class="font-semibold text-sm text-slate-200">Star Schema Modeling</h4>
+              <p class="text-xs text-slate-400 mt-1">Designing Fact & Dimension table schemas for BI integration.</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-slate-900/60 border border-brand-border">
+              <i class="fa-solid fa-briefcase text-brand-teal text-xl mb-2"></i>
+              <h4 class="font-semibold text-sm text-slate-200">Business Intelligence</h4>
+              <p class="text-xs text-slate-400 mt-1">Translating business questions into analytical SQL queries.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive SQL Sandbox Component -->
+    <section id="sandbox" class="py-20 bg-slate-900/50 border-y border-brand-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl font-bold tracking-tight">Interactive SQL Sandbox</h2>
+          <p class="text-slate-400 mt-2">Select a scenario to view the T-SQL query and the resulting structured sample output.</p>
+        </div>
+
+        <div class="bg-brand-card border border-brand-border rounded-xl shadow-2xl overflow-hidden">
+          <!-- Sandbox Tabs -->
+          <div class="flex border-b border-brand-border bg-slate-900/80 overflow-x-auto">
+            <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn px-6 py-3.5 text-sm font-mono font-medium border-b-2 border-brand-cyan text-brand-cyan flex items-center gap-2 whitespace-nowrap">
+              <i class="fa-solid fa-broom text-xs"></i> 1. Missing Data (Self Join)
+            </button>
+            <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn px-6 py-3.5 text-sm font-mono font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
+              <i class="fa-solid fa-chart-line text-xs"></i> 2. MoM Growth (LAG)
+            </button>
+            <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn px-6 py-3.5 text-sm font-mono font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center gap-2 whitespace-nowrap">
+              <i class="fa-solid fa-users text-xs"></i> 3. Customer RFM Logic
+            </button>
+          </div>
+
+          <!-- Sandbox Content -->
+          <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- SQL Code View -->
+            <div class="lg:col-span-7 bg-brand-dark rounded-lg p-4 font-mono text-xs text-slate-300 border border-brand-border overflow-x-auto">
+              <div class="flex items-center justify-between text-slate-500 pb-2 mb-3 border-b border-slate-800">
+                <span>T-SQL Query Editor</span>
+                <span class="text-brand-cyan">MS SQL Server</span>
+              </div>
+              
+              <!-- Query 1 Content -->
+              <pre id="code-tab1" class="tab-content"><code class="text-slate-200">
+<span class="text-sky-400">-- Populate missing PropertyAddress records using matching ParcelIDs</span>
+<span class="text-sky-400">UPDATE</span> a
+<span class="text-sky-400">SET</span> PropertyAddress = <span class="text-teal-300">ISNULL</span>(a.PropertyAddress, b.PropertyAddress)
+<span class="text-sky-400">FROM</span> PortfolioProject.dbo.NashvilleHousing a
+<span class="text-sky-400">JOIN</span> PortfolioProject.dbo.NashvilleHousing b
+    <span class="text-sky-400">ON</span> a.ParcelID = b.ParcelID
+    <span class="text-sky-400">AND</span> a.[UniqueID] &lt;&gt; b.[UniqueID]
+<span class="text-sky-400">WHERE</span> a.PropertyAddress <span class="text-sky-400">IS NULL</span>;
+              </code></pre>
+
+              <!-- Query 2 Content -->
+              <pre id="code-tab2" class="tab-content hidden"><code class="text-slate-200">
+<span class="text-sky-400">-- Calculate Monthly Revenue and MoM Growth %</span>
+<span class="text-sky-400">WITH</span> MonthlySales <span class="text-sky-400">AS</span> (
+    <span class="text-sky-400">SELECT</span> 
+        <span class="text-teal-300">YEAR</span>(SaleDate) <span class="text-sky-400">AS</span> SalesYear,
+        <span class="text-teal-300">MONTH</span>(SaleDate) <span class="text-sky-400">AS</span> SalesMonth,
+        <span class="text-teal-300">SUM</span>(TotalAmount) <span class="text-sky-400">AS</span> CurrentRevenue
+    <span class="text-sky-400">FROM</span> Sales
+    <span class="text-sky-400">GROUP BY</span> <span class="text-teal-300">YEAR</span>(SaleDate), <span class="text-teal-300">MONTH</span>(SaleDate)
+)
+<span class="text-sky-400">SELECT</span> 
+    SalesYear, SalesMonth, CurrentRevenue,
+    <span class="text-teal-300">LAG</span>(CurrentRevenue, 1) <span class="text-sky-400">OVER</span> (<span class="text-sky-400">ORDER BY</span> SalesYear, SalesMonth) <span class="text-sky-400">AS</span> PriorRevenue,
+    <span class="text-teal-300">ROUND</span>(((CurrentRevenue - <span class="text-teal-300">LAG</span>(CurrentRevenue, 1) <span class="text-sky-400">OVER</span> (<span class="text-sky-400">ORDER BY</span> SalesYear, SalesMonth)) 
+    / <span class="text-teal-300">NULLIF</span>(<span class="text-teal-300">LAG</span>(CurrentRevenue, 1) <span class="text-sky-400">OVER</span> (<span class="text-sky-400">ORDER BY</span> SalesYear, SalesMonth), 0)) * 100, 2) <span class="text-sky-400">AS</span> MoM_Growth_PCT
+<span class="text-sky-400">FROM</span> MonthlySales;
+              </code></pre>
+
+              <!-- Query 3 Content -->
+              <pre id="code-tab3" class="tab-content hidden"><code class="text-slate-200">
+<span class="text-sky-400">-- Customer Spending Segmentation</span>
+<span class="text-sky-400">SELECT</span> 
+    c.CustomerID, c.CustomerName,
+    <span class="text-teal-300">SUM</span>(s.TotalAmount) <span class="text-sky-400">AS</span> TotalSpent,
+    <span class="text-sky-400">CASE</span> 
+        <span class="text-sky-400">WHEN</span> <span class="text-teal-300">SUM</span>(s.TotalAmount) &gt;= 10000 <span class="text-sky-400">THEN</span> <span class="text-emerald-400">'VIP Tier'</span>
+        <span class="text-sky-400">WHEN</span> <span class="text-teal-300">SUM</span>(s.TotalAmount) <span class="text-sky-400">BETWEEN</span> 4000 <span class="text-sky-400">AND</span> 9999 <span class="text-sky-400">THEN</span> <span class="text-emerald-400">'Regular'</span>
+        <span class="text-sky-400">ELSE</span> <span class="text-emerald-400">'Low Engagement'</span>
+    <span class="text-sky-400">END AS</span> CustomerSegment
+<span class="text-sky-400">FROM</span> Customers c
+<span class="text-sky-400">JOIN</span> Sales s <span class="text-sky-400">ON</span> c.CustomerID = s.CustomerID
+<span class="text-sky-400">GROUP BY</span> c.CustomerID, c.CustomerName;
+              </code></pre>
+            </div>
+
+            <!-- Table Result View -->
+            <div class="lg:col-span-5 bg-slate-900 rounded-lg p-4 border border-brand-border flex flex-col justify-between">
+              <div>
+                <div class="text-xs text-slate-400 font-mono mb-3 flex items-center justify-between border-b border-slate-800 pb-2">
+                  <span>Query Execution Result</span>
+                  <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle text-[8px]"></i> Success</span>
+                </div>
+
+                <!-- Table 1 Output -->
+                <div id="result-tab1" class="tab-result overflow-x-auto">
+                  <table class="w-full text-left font-mono text-xs">
+                    <thead>
+                      <tr class="text-brand-cyan border-b border-slate-800">
+                        <th class="pb-2">ParcelID</th>
+                        <th class="pb-2">PropertyAddress</th>
+                        <th class="pb-2">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                      <tr>
+                        <td class="py-2">025 07 0 031.00</td>
+                        <td class="py-2">1802  STEWART PK</td>
+                        <td class="py-2 text-emerald-400">Updated</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2">034 03 0 002.00</td>
+                        <td class="py-2">110  TODD PRESTON DR</td>
+                        <td class="py-2 text-emerald-400">Updated</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2">052 08 0 012.00</td>
+                        <td class="py-2">610  SPRING ST</td>
+                        <td class="py-2 text-emerald-400">Updated</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Table 2 Output -->
+                <div id="result-tab2" class="tab-result hidden overflow-x-auto">
+                  <table class="w-full text-left font-mono text-xs">
+                    <thead>
+                      <tr class="text-brand-cyan border-b border-slate-800">
+                        <th class="pb-2">Month</th>
+                        <th class="pb-2">Current</th>
+                        <th class="pb-2">MoM %</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                      <tr>
+                        <td class="py-2">2026-01</td>
+                        <td class="py-2">$45,200</td>
+                        <td class="py-2 text-slate-400">N/A</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2">2026-02</td>
+                        <td class="py-2">$52,800</td>
+                        <td class="py-2 text-emerald-400">+16.81%</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2">2026-03</td>
+                        <td class="py-2">$49,100</td>
+                        <td class="py-2 text-rose-400">-7.01%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Table 3 Output -->
+                <div id="result-tab3" class="tab-result hidden overflow-x-auto">
+                  <table class="w-full text-left font-mono text-xs">
+                    <thead>
+                      <tr class="text-brand-cyan border-b border-slate-800">
+                        <th class="pb-2">Customer</th>
+                        <th class="pb-2">Total Spent</th>
+                        <th class="pb-2">Segment</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                      <tr>
+                        <td class="py-2">Ahmed Al-Saeed</td>
+                        <td class="py-2">$14,250</td>
+                        <td class="py-2 text-amber-400 font-semibold">VIP Tier</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2">Sara Hassan</td>
+                        <td class="py-2">$6,100</td>
+                        <td class="py-2 text-sky-400">Regular</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2">Omar Khalid</td>
+                        <td class="py-2">$1,200</td>
+                        <td class="py-2 text-slate-400">Low Engagement</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <p class="text-[11px] text-slate-500 mt-4 border-t border-slate-800 pt-2">
+                Output preview constructed from clean normalized test dataset.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Background -->
+    <section id="about" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-5">
+          <h2 class="text-3xl font-bold tracking-tight mb-4">Education & Background</h2>
+          <p class="text-slate-400 leading-relaxed mb-6">
+            Solid computer information systems foundation combined with practical data processing skills. Experienced in structured database management, BI dashboard development, and analytical reporting.
+          </p>
+          <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex items-start gap-4">
+            <div class="p-3 bg-brand-cyan/10 text-brand-cyan rounded-lg text-2xl">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-100">B.S. in Computer Information Systems (CIS)</h3>
+              <p class="text-sm text-brand-teal mt-0.5">University of Jeddah</p>
+              <p class="text-xs text-slate-400 mt-1">Focus: Database Systems, Business Intelligence, Data Structures.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-brand-card border border-brand-border">
+            <div class="text-2xl text-brand-cyan font-bold font-mono mb-1">56K+</div>
+            <div class="text-sm font-semibold text-slate-200">Records Transformed</div>
+            <p class="text-xs text-slate-400 mt-1">Processed and cleaned within SQL Server databases.</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-brand-card border border-brand-border">
+            <div class="text-2xl text-brand-teal font-bold font-mono mb-1">100%</div>
+            <div class="text-sm font-semibold text-slate-200">Automated Pipeline Focus</div>
+            <p class="text-xs text-slate-400 mt-1">Using reusable SQL queries and Power Query views.</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-brand-card border border-brand-border sm:col-span-2">
+            <h4 class="font-bold text-slate-200 text-sm mb-2 flex items-center gap-2">
+              <i class="fa-solid fa-award text-brand-cyan"></i> Key Technical Focus
+            </h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Bridging the gap between raw backend databases and executive decisions by translating complex SQL queries into clear visuals and key performance metric summaries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900/50 border-t border-brand-border">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold tracking-tight mb-3">Let's Connect</h2>
+        <p class="text-slate-400 mb-10 max-w-lg mx-auto">Open for Data Analyst roles, Business Intelligence opportunities, and analytical projects in Jeddah and remotely.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+          <a href="mailto:analyst@example.com" class="p-6 rounded-xl bg-brand-card border border-brand-border hover:border-brand-cyan transition text-center group">
+            <i class="fa-solid fa-envelope text-2xl text-brand-cyan mb-3 group-hover:scale-110 transition"></i>
+            <h3 class="font-semibold text-sm text-slate-200">Email Me</h3>
+            <p class="text-xs text-slate-400 mt-1">Direct inquiries & contact</p>
+          </a>
+
+          <a href="https://linkedin.com" target="_blank" class="p-6 rounded-xl bg-brand-card border border-brand-border hover:border-brand-cyan transition text-center group">
+            <i class="fa-brands fa-linkedin text-2xl text-sky-400 mb-3 group-hover:scale-110 transition"></i>
+            <h3 class="font-semibold text-sm text-slate-200">LinkedIn</h3>
+            <p class="text-xs text-slate-400 mt-1">Professional network</p>
+          </a>
+
+          <a href="https://github.com" target="_blank" class="p-6 rounded-xl bg-brand-card border border-brand-border hover:border-brand-cyan transition text-center group">
+            <i class="fa-brands fa-github text-2xl text-slate-200 mb-3 group-hover:scale-110 transition"></i>
+            <h3 class="font-semibold text-sm text-slate-200">GitHub</h3>
+            <p class="text-xs text-slate-400 mt-1">SQL repositories & scripts</p>
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-500 font-mono">
+          Designed for GitHub Pages deployment | Jeddah, Saudi Arabia
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal for Project 1 Script -->
+  <div id="modal-p1" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-border rounded-xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl">
+      <div class="p-4 border-b border-brand-border flex items-center justify-between">
+        <h3 class="font-bold text-slate-100 font-mono text-sm">Nashville Housing Data Cleaning Script</h3>
+        <button onclick="closeModal('modal-p1')" class="text-slate-400 hover:text-slate-200 text-lg px-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto font-mono text-xs text-slate-300 space-y-4 custom-scrollbar">
+        <pre class="bg-brand-dark p-4 rounded-lg border border-brand-border text-slate-200 overflow-x-auto"><code>-- 1. Standardize Sale Date
+ALTER TABLE NashvilleHousing ADD SaleDateConverted Date;
+UPDATE NashvilleHousing SET SaleDateConverted = CONVERT(Date, SaleDate);
+
+-- 2. Populate Missing Property Addresses
+UPDATE a
+SET PropertyAddress = ISNULL(a.PropertyAddress, b.PropertyAddress)
+FROM PortfolioProject.dbo.NashvilleHousing a
+JOIN PortfolioProject.dbo.NashvilleHousing b
+    ON a.ParcelID = b.ParcelID
+    AND a.[UniqueID ] <> b.[UniqueID ]
+WHERE a.PropertyAddress IS NULL;
+
+-- 3. Remove Duplicate Records
+WITH RowNumCTE AS (
+    SELECT *,
+        ROW_NUMBER() OVER (
+            PARTITION BY ParcelID, PropertyAddress, SalePrice, SaleDate, LegalReference
+            ORDER BY UniqueID
+        ) row_num
+    FROM PortfolioProject.dbo.NashvilleHousing
+)
+DELETE FROM RowNumCTE WHERE row_num > 1;</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Project 2 Script -->
+  <div id="modal-p2" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-border rounded-xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl">
+      <div class="p-4 border-b border-brand-border flex items-center justify-between">
+        <h3 class="font-bold text-slate-100 font-mono text-sm">Retail Analytics & RFM Script</h3>
+        <button onclick="closeModal('modal-p2')" class="text-slate-400 hover:text-slate-200 text-lg px-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto font-mono text-xs text-slate-300 space-y-4 custom-scrollbar">
+        <pre class="bg-brand-dark p-4 rounded-lg border border-brand-border text-slate-200 overflow-x-auto"><code>-- 1. Revenue & Profitability per Category
+SELECT 
+    p.Category,
+    COUNT(DISTINCT s.TransactionID) AS Total_Orders,
+    SUM(s.Quantity * p.UnitPrice) AS Total_Revenue,
+    SUM(s.Quantity * (p.UnitPrice - p.CostPrice)) AS Total_Profit
+FROM Sales s
+JOIN Products p ON s.ProductID = p.ProductID
+GROUP BY p.Category
+ORDER BY Total_Revenue DESC;
+
+-- 2. Customer RFM Segmentation
+SELECT 
+    c.CustomerID, c.CustomerName,
+    SUM(s.TotalAmount) AS TotalSpent,
+    CASE 
+        WHEN SUM(s.TotalAmount) >= 10000 THEN 'VIP Tier'
+        WHEN SUM(s.TotalAmount) BETWEEN 4000 AND 9999 THEN 'Regular'
+        ELSE 'Low Engagement'
+    END AS CustomerSegment
+FROM Customers c
+JOIN Sales s ON c.CustomerID = s.CustomerID
+GROUP BY c.CustomerID, c.CustomerName;</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Tab Switch Logic for SQL Sandbox
+    function switchTab(tabId) {
+      // Hide all contents
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-result').forEach(el => el.classList.add('hidden'));
+
+      // Reset tab button styles
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-brand-cyan', 'text-brand-cyan');
+        btn.classList.add('border-transparent', 'text-slate-400');
+      });
+
+      // Show selected content & set active tab style
+      document.getElementById('code-' + tabId).classList.remove('hidden');
+      document.getElementById('result-' + tabId).classList.remove('hidden');
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      activeBtn.classList.remove('border-transparent', 'text-slate-400');
+      activeBtn.classList.add('border-brand-cyan', 'text-brand-cyan');
+    }
+
+    // Modal Control Functions
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  </script>
+</body>
+</html>
